@@ -44,3 +44,10 @@ request('https://v2.jokeapi.dev/joke/Any', function (error, response, data) {
     console.log(data)
   }
 })
+
+function getData () {
+  fetch("https://v2.jokeapi.dev/joke/Any")
+   .then(res => res.json())
+   .then(data => console.log(data)) // will log js object
+   .catch(err => console.log(err))
+}

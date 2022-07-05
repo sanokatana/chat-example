@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
       body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
@@ -15,6 +16,20 @@
       #messages > li:nth-child(odd) { background: #efefef; }
     </style>
   </head>
+  
+  <button onclick="sendJoke()">Click here to send a joke</button>
+  <script>
+
+  function sendJoke() {
+    fetch("https://v2.jokeapi.dev/joke/Any")
+   .then(res => res.json())
+   .then(data => console.log(data)) // will log js object
+   .catch(err => console.log(err))
+
+    }
+  </script>
+
+
   <body>
     <ul id="messages"></ul>
     <form id="form" action="">
